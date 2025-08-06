@@ -1,0 +1,10 @@
+class Solution:
+    def reverseDLL(self, head):
+        t=head
+        prev=None
+        while(t):
+            v=t.next
+            t.next=prev
+            prev=t
+            t=v
+        return prev
