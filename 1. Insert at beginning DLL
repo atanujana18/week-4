@@ -1,0 +1,21 @@
+class Solution:
+    def sortedInsert(self, head, x):
+        temp = head
+        new = Node(x)
+        
+        # Add the Node at the Beginning
+        if temp.data >= x:
+            new.next = temp
+            return new
+        
+        # Add the Node in Middle
+        while temp.next is not None:
+            if temp.next.data > x:
+                new.next = temp.next
+                temp.next = new
+                return head
+            temp = temp.next
+        
+        #Add the Node in Last
+        temp.next = new
+        return head
